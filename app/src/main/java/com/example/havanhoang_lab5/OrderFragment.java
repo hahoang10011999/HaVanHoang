@@ -1,6 +1,9 @@
 package com.example.havanhoang_lab5;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,11 +17,16 @@ import androidx.fragment.app.Fragment;
 
 import com.example.havanhoang_lab5.databinding.OrderBinding;
 
+import java.util.prefs.Preferences;
+
 public class OrderFragment extends Fragment {
     OrderBinding binding;
     int number = 0;
     int price = 0;
-    Bundle bundle = new Bundle();
+
+
+
+
     public static OrderFragment newInstance() {
         Bundle args = new Bundle();
         OrderFragment fragment = new OrderFragment();
@@ -41,7 +49,7 @@ public class OrderFragment extends Fragment {
         binding.tvPizza.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 String name = "Pizza Panda";
+                String pizza = binding.tvPizza.getText().toString();
                  int numberPizza = 0 ;
                  number = number +1;
                  numberPizza = numberPizza+1;
@@ -50,8 +58,6 @@ public class OrderFragment extends Fragment {
                 String num = Integer.toString(number);
                 binding.tvTotal.setText(pri);
                 binding.tvNumber.setText(num);
-                bundle.putInt("numberPizza",numberPizza);
-                bundle.putString("namePizza",name);
 
 
             }
