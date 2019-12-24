@@ -1,15 +1,14 @@
 package com.example.havanhoang_lab5;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
-import android.renderscript.ScriptGroup;
 import android.util.Log;
 
-import java.util.List;
+import com.example.havanhoang_lab5.Order.Order;
+import com.example.havanhoang_lab5.Order.Your_order;
 
 public class MainActivity extends AppCompatActivity {
     String TAG = "MainActivity";
@@ -17,7 +16,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getFragment(OrderFragment.newInstance());
+        getFragment(Order.newInstance());
+
     }
 
     public void getFragment(Fragment fragment) {
